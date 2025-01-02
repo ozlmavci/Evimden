@@ -1,0 +1,59 @@
+﻿@using Evimden.CoreLayer.DTOs.IdentityDTOs
+@using Evimden.UI.Web.Models.VMs
+@using Newtonsoft.Json
+@model List<CustomRoleDto>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 d-flex justify-content-center align-items-center">
+    @if (TempData["ResponseVM"] != null)
+    {
+        var response = JsonConvert.DeserializeObject<ResponseVM>(TempData["ResponseVM"].ToString());
+        <div class="alert @(response.Success ? "alert-success" : "alert-danger") col-8" role="alert" style="z-index: 1050; width: 50%;">
+            @response.Message
+        </div>
+    }
+</div>
+
+
+<div class="card shadow mb-4 col-8">
+    <div class="card-header py-4 d-flex justify-content-between align-items-center">
+        <div col-8>
+            <h6 class="m-0 font-weight-bold text-primary">Roller</h6>
+        </div>
+        <div col-4>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Rol Adı</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>
+                                <a href="@Url.Action("UpdateRole", "Role", new { id = item.Id })" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-edit"></i> Düzenle
+                                </a>
+                                <a href="@Url.Action("DeleteRole", "Role", new { id = item.Id })" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-trash"></i> Sil
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

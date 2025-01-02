@@ -1,0 +1,34 @@
+﻿ @model Evimden.CoreLayer.DTOs.ProfileDTOs.SellerDto
+
+@{
+    ViewData["Title"] = "Satıcı Detayları";
+}
+
+<h1>@Model.ShopName - Satıcı Detayları</h1>
+
+<div>
+    <strong>Satıcı Adı:</strong> @Model.UserId <!-- UserId yerine uygun bir gösterim yapılmalı -->
+</div>
+<div>
+    <strong>Mağaza Adı:</strong> @Model.ShopName
+</div>
+<div>
+    <strong>Ülke:</strong> @Model.CountryId <!-- CountryId, actual country name ile dönüştürülmeli -->
+</div>
+<div>
+    <strong>Şehir:</strong> @Model.CityId <!-- CityId, actual city name ile dönüştürülmeli -->
+</div>
+<div>
+    <strong>İlçe:</strong> @Model.DistrictId <!-- DistrictId, actual district name ile dönüştürülmeli -->
+</div>
+<div>
+    <strong>Hakkında:</strong> @Model.About
+</div>
+<div>
+    <strong>Onay Durumu:</strong> @(Model.IsApproved ? "Onaylı" : "Bekliyor")
+</div>
+<div>
+    <strong>Yasak Durumu:</strong> @(Model.IsBanned ? "Yasaklı" : "Aktif")
+</div>
+
+<a href="@Url.Action("GetAllSellers")">Listeye Dön</a>

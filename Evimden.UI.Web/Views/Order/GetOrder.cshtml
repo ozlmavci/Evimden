@@ -1,0 +1,17 @@
+﻿ @model Evimden.CoreLayer.DTOs.OrderDTOs.OrderDto
+
+@{
+    ViewData["Title"] = "Sipariş Detayları";
+}
+
+<h1>Sipariş Detayları</h1>
+
+<p><strong>Sipariş ID:</strong> @Model.OrderId</p>
+<p><strong>Kullanıcı ID:</strong> @Model.UserId</p>
+<p><strong>Ürün ID:</strong> @Model.ProductId</p>
+<p><strong>Sipariş Durumu:</strong> @Model.OrderStatus</p>
+<p><strong>Adet:</strong> @Model.Quantity</p>
+<p><strong>Ödeme ID:</strong> @Model.PaymentId</p>
+<p><strong>Adres ID:</strong> @Model.AddressId</p>
+<p><strong>Sipariş Tarihi:</strong> @Model.OrderDate</p>
+<p

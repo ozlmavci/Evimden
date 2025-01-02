@@ -1,0 +1,88 @@
+/* Genel form düzenlemesi */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container, .register-container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+    .form-input:focus {
+        outline: none;
+        border-color: #258cfb;
+        box-shadow: 0 0 0 0.2rem rgba(37, 140, 251, 0.25);
+    }
+
+.form-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.form-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background: #258cfb;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .form-button:hover {
+        background: #0056b3;
+    }
+
+/* Checkbox stilleri */
+.form-check-input {
+    margin-right: 10px;
+}
+
+.form-check-label {
+    display: inline-block;
+    vertical-align: middle;
+}

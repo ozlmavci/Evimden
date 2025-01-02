@@ -1,0 +1,14 @@
+﻿ @model Evimden.CoreLayer.DTOs.OrderDTOs.CouponDto
+
+@{
+    ViewData["Title"] = "Kupon Detayları";
+}
+
+<h1>Kupon Detayları</h1>
+
+<p><strong>Kupon ID:</strong> @Model.CouponId</p>
+<p><strong>Kullanıcı ID:</strong> @Model.UserId</p>
+<p><strong>Tutar:</strong> @Model.Amount</p>
+<p><strong>İndirim Oranı:</strong> @Model.Rate</p>
+<p><strong>Son Kullanma Tarihi:</strong> @Model.ExpirationDate.ToString("yyyy-MM-dd")</p>
+<p><strong>Kullanıldı mı:</strong> @(Model.IsUsed ? "Evet" : "Hayır")</p>

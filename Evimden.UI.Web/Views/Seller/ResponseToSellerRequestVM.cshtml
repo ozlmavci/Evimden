@@ -1,0 +1,23 @@
+﻿ @model Evimden.UI.Web.Models.VMs.SellerVMs.ResponseToSellerRequestVM
+
+@{
+    ViewData["Title"] = "Satıcı Başvurusu Yanıtı";
+}
+
+<h1>Satıcı Başvurusu: @Model.SellerInfo.ShopName</h1>
+
+<p><strong>Başvuru Durumu:</strong> @Model.Dto.ApprovalStatus ? "Onaylı" : "Bekliyor"</p>
+
+<form asp-action="PendingSellerRequest" method="post">
+    <div class="form-group">
+        <label for="Response">Başvuru Cevabı</label>
+        <select class="form-control" id="Response" name="Response">
+            <option value="Approve">Onayla</option>
+            <option value="Reject">Reddet</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Yanıtı Gönder</button>
+</form>
+
+<a href="@Url.Action("PendingSellerRequest")">Listeye Dön</a>

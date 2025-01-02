@@ -1,0 +1,33 @@
+﻿@using Evimden.UI.Web.Models.VMs.SellerVMs
+@model List<ResponseToSellerRequestVM>
+
+@{
+    ViewData["Title"] = "Bekleyen Satıcı Başvuruları";
+}
+
+<h1>Bekleyen Satıcı Başvuruları</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Satıcı Adı</th>
+            <th>Mağaza Adı</th>
+            <th>Başvuru Durumu</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var approval in Model)
+        {
+            <tr>
+                <td>@approval.Dto.SellerId</td> <!-- SellerId yerine uygun bir gösterim yapılmalı -->
+                <td>@approval.SellerInfo.ShopName</td>
+                <td>@(approval.SellerInfo.IsApproved ? "Onaylı" : "Bekliyor")</td>
+                <td>
+                    <a href="@Url.Action("PendingSellerRequest", new { id = approval.Dto.SellerApprovalId })">Onayla</a> |
+                    <a href="@Url.Action("GetSeller", new { id = approval.Dto.SellerId })">Detaylar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

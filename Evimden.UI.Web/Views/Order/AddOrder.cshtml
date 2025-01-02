@@ -1,0 +1,62 @@
+﻿@model Evimden.CoreLayer.DTOs.OrderDTOs.OrderDto
+
+@{
+    ViewData["Title"] = "Yeni Sipariş Ekle";
+    Layout = "_Layout";
+}
+
+<h1>Yeni Sipariş Ekle</h1>
+
+<form asp-action="AddOrder" method="post">
+    <div class="form-group">
+        <label for="UserId">Kullanıcı ID</label>
+        <input type="text" id="UserId" name="UserId" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ProductId">Ürün ID</label>
+        <input type="text" id="ProductId" name="ProductId" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="SellerId">Satıcı ID</label>
+        <input type="text" id="SellerId" name="SellerId" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="AddressId">Adres ID</label>
+        <input type="text" id="AddressId" name="AddressId" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="PaymentId">Ödeme ID</label>
+        <input type="text" id="PaymentId" name="PaymentId" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="OrderDate">Sipariş Tarihi</label>
+        <input type="date" id="OrderDate" name="OrderDate" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="OrderStatus">Sipariş Durumu</label>
+        <select id="OrderStatus" name="OrderStatus" class="form-control">
+            <option value="Bekliyor">Bekliyor</option>
+            <option value="Onaylandı">Onaylandı</option>
+            <option value="Teslim Edildi">Teslim Edildi</option>
+            <option value="İptal Edildi">İptal Edildi</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Quantity">Adet</label>
+        <input type="number" id="Quantity" name="Quantity" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CargoTrackingCode">Kargo Takip Kodu</label>
+        <input type="text" id="CargoTrackingCode" name="CargoTrackingCode" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Siparişi Ekle</button>
+</form>

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="Google.Cloud.Storage.V1" Version="4.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Evimden.DataAccessLayer\Evimden.DataAccessLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Validation\CargoValidator\" />
+    <Folder Include="Validation\LocationValidator\" />
+    <Folder Include="Validation\ProfileValidator\" />
+    <Folder Include="Validation\ProductValidator\" />
+    <Folder Include="Validation\OrderValidator\" />
+  </ItemGroup>
+
+</Project>

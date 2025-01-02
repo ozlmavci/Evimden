@@ -1,0 +1,22 @@
+﻿ @model Evimden.CoreLayer.DTOs.ProductDTOs.ProductWithImagesDto
+
+@{
+    ViewData["Title"] = "Ürün Detayları";
+}
+
+<h1>@Model.Product.ProductName</h1>
+
+<p><strong>Açıklama:</strong> @Model.Product.Description</p>
+<p><strong>Fiyat:</strong> @Model.Product.Price</p>
+<p><strong>İndirim Oranı:</strong> @Model.Product.DiscountRate%</p>
+
+@if (Model.Images != null && Model.Images.Any())
+{
+    <h3>Ürün Resimleri</h3>
+    <div>
+        @foreach (var image in Model.Images)
+        {
+            <img src="@image.ImagePath" alt="Ürün Resmi" width="150" height="150" />
+        }
+    </div>
+}

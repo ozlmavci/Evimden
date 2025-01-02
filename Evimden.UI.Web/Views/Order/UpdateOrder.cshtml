@@ -1,0 +1,61 @@
+﻿@model Evimden.CoreLayer.DTOs.OrderDTOs.OrderDto
+
+@{
+    ViewData["Title"] = "Siparişi Düzenle";
+}
+
+<h1>Siparişi Düzenle</h1>
+
+<form asp-action="UpdateOrder" method="post">
+    <div class="form-group">
+        <label for="UserId">Kullanıcı ID</label>
+        <input type="text" id="UserId" name="UserId" class="form-control" value="@Model.UserId" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ProductId">Ürün ID</label>
+        <input type="text" id="ProductId" name="ProductId" class="form-control" value="@Model.ProductId" required />
+    </div>
+
+    <div class="form-group">
+        <label for="SellerId">Satıcı ID</label>
+        <input type="text" id="SellerId" name="SellerId" class="form-control" value="@Model.SellerId" required />
+    </div>
+
+    <div class="form-group">
+        <label for="AddressId">Adres ID</label>
+        <input type="text" id="AddressId" name="AddressId" class="form-control" value="@Model.AddressId" required />
+    </div>
+
+    <div class="form-group">
+        <label for="PaymentId">Ödeme ID</label>
+        <input type="text" id="PaymentId" name="PaymentId" class="form-control" value="@Model.PaymentId" required />
+    </div>
+
+    <div class="form-group">
+        <label for="OrderDate">Sipariş Tarihi</label>
+        <input type="date" id="OrderDate" name="OrderDate" class="form-control" value="@Model.OrderDate.ToString("yyyy-MM-dd")" required />
+    </div>
+
+    <div class="form-group">
+        <label for="OrderStatus">Sipariş Durumu</label>
+        <select id="OrderStatus" name="OrderStatus" class="form-control">
+            @* <option value="Bekliyor" @(Model.OrderStatus == Evimden.CoreLayer.Common.Enums.OrderStatusEnum.Bekliyor ? "selected" : "")>Bekliyor</option> *@
+            @* <option value="Onaylandı" @(Model.OrderStatus == Evimden.CoreLayer.Common.Enums.OrderStatusEnum.Onaylandı ? "selected" : "")>Onaylandı</option> *@
+            @* <option value="Teslim Edildi" @(Model.OrderStatus == Evimden.CoreLayer.Common.Enums.OrderStatusEnum.TeslimEdildi ? "selected" : "")>Teslim Edildi</option> *@
+            @* <option value="İptal Edildi" @(Model.OrderStatus == Evimden.CoreLayer.Common.Enums.OrderStatusEnum.İptalEdildi ? "selected" : "")>İptal Edildi</option> *@
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="Quantity">Adet</label>
+        <input type="number" id="Quantity" name="Quantity" class="form-control" value="@Model.Quantity" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CargoTrackingCode">Kargo Takip Kodu</label>
+        <input type="text" id="CargoTrackingCode" name="CargoTrackingCode" class="form-control" value="@Model.CargoTrackingCode" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+</form>

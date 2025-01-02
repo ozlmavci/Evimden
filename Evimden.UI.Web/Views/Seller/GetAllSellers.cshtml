@@ -1,0 +1,34 @@
+﻿@model List<Evimden.CoreLayer.DTOs.ProfileDTOs.SellerDto>
+
+@{
+    ViewData["Title"] = "Satıcılar";
+}
+
+<h1>Satıcılar</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Satıcı Adı</th>
+            <th>Mağaza Adı</th>
+            <th>Ülke</th>
+            <th>Şehir</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var seller in Model)
+        {
+            <tr>
+                <td>@seller.UserId</td> <!-- UserId bilgisi yerine, gerçek kullanıcı adını veya diğer bilgileri kullanabilirsiniz -->
+                <td>@seller.ShopName</td>
+                <td>@seller.CountryId</td> <!-- CountryId'yi, country adını dönüştürerek gösterebilirsiniz -->
+                <td>@seller.CityId</td> <!-- CityId'yi, city adını dönüştürerek gösterebilirsiniz -->
+                <td>
+                    <a href="@Url.Action("GetSeller", new { id = seller.SellerId })">Detaylar</a> |
+                    <a href="@Url.Action("MySellerRequest", new { id = seller.SellerId })">Başvuru Durumu</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+﻿@model Evimden.CoreLayer.DTOs.CargoDTOs.ShipperDto
+
+@{
+    ViewData["Title"] = "Gönderici Güncelle";
+}
+
+<h1>Gönderici Güncelle</h1>
+
+<form asp-action="UpdateShipper" method="post">
+    <input type="hidden" name="ShipperId" value="@Model.ShipperId" />
+
+    <div class="form-group">
+        <label for="ShipperName">Gönderici Adı</label>
+        <input type="text" class="form-control" id="ShipperName" name="ShipperName" value="@Model.ShipperName" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ContactName">İletişim Adı</label>
+        <input type="text" class="form-control" id="ContactName" name="ContactName" value="@Model.ContactName" />
+    </div>
+
+    <div class="form-group">
+        <label for="PhoneNumber">Telefon Numarası</label>
+        <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Email">E-posta</label>
+        <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" />
+    </div>
+
+    <div class="form-group">
+        <label for="ApiUrl">API URL</label>
+        <input type="text" class="form-control" id="ApiUrl" name="ApiUrl" value="@Model.ApiUrl" />
+    </div>
+
+    <div class="form-group">
+        <label for="ApiKey">API Anahtarı</label>
+        <input type="text" class="form-control" id="ApiKey" name="ApiKey" value="@Model.ApiKey" />
+    </div>
+
+    <!-- CountryId için uygun bir seçim kutusu eklenebilir -->
+    <div class="form-group">
+        <label for="CountryId">Ülke</label>
+        <select class="form-control" id="CountryId" name="CountryId">
+            <!-- Ülkeleri dinamik olarak burada listeleyebilirsiniz -->
+            <option value="1" >Türkiye</option>
+            <option value="2" >Almanya</option>
+
+            <!-- //TODO : TÜM ÜLKE LİSTELERİ BURAYA ÇEKİLECEK -->
+
+            <!-- Diğer ülkeleri ekleyin -->
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Gönderici Güncelle</button>
+</form>
+
+<a href="@Url.Action("Index")">Listeye Dön</a>

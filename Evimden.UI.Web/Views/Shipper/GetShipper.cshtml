@@ -1,0 +1,31 @@
+﻿ @model Evimden.CoreLayer.DTOs.CargoDTOs.ShipperDto
+
+@{
+    ViewData["Title"] = "Gönderici Detayları";
+}
+
+<h1>Gönderici Detayları</h1>
+
+<div>
+    <strong>Gönderici Adı:</strong> @Model.ShipperName
+</div>
+<div>
+    <strong>İletişim Adı:</strong> @Model.ContactName
+</div>
+<div>
+    <strong>Telefon Numarası:</strong> @Model.PhoneNumber
+</div>
+<div>
+    <strong>E-posta:</strong> @Model.Email
+</div>
+<div>
+    <strong>API URL:</strong> @Model.ApiUrl
+</div>
+<div>
+    <strong>API Anahtarı:</strong> @Model.ApiKey
+</div>
+<div>
+    <strong>Ülke:</strong> @Model.CountryId <!-- Ülke bilgisi veritabanından veya API'den çekilebilir -->
+</div>
+
+<a href="@Url.Action("Index")">Listeye Dön</a>

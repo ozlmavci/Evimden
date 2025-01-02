@@ -1,0 +1,35 @@
+﻿ @model List<Evimden.CoreLayer.DTOs.ProductDTOs.ProductDto>
+
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+<h1>Ürünler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Açıklama</th>
+            <th>Fiyat</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductName</td>
+                <td>@product.Description</td>
+                <td>@product.Price</td>
+                <td>
+                    <a href="@Url.Action("GetProduct", new { id = product.ProductId })">Detaylar</a> |
+                    <a href="@Url.Action("UpdateProduct", new { id = product.ProductId })">Düzenle</a> |
+                    <a href="@Url.Action("DeleteProduct", new { id = product.ProductId })">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("AddProduct")" class="btn btn-primary">Ürün Ekle</a>

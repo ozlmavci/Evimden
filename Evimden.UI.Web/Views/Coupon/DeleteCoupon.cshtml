@@ -1,0 +1,17 @@
+﻿ @model Evimden.CoreLayer.DTOs.OrderDTOs.CouponDto
+
+@{
+    ViewData["Title"] = "Kuponu Sil";
+}
+
+<h1>Kuponu Sil</h1>
+
+<p>Kuponu silmek istediğinizden emin misiniz?</p>
+
+<p><strong>Kupon ID:</strong> @Model.CouponId</p>
+<p><strong>Kullanıcı ID:</strong> @Model.UserId</p>
+
+<form asp-action="DeleteCoupon" method="post">
+    <button type="submit" class="btn btn-danger">Evet, sil</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Hayır, geri dön</a>
+</form>

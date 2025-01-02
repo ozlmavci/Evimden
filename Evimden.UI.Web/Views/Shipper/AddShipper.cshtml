@@ -1,0 +1,55 @@
+﻿@model Evimden.CoreLayer.DTOs.CargoDTOs.ShipperDto
+
+@{
+    ViewData["Title"] = "Yeni Kargo Şirketi Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="card shadow mb-4 col-8">
+    <div class="card-header py-4 d-flex justify-content-between align-items-center">
+        <div col-8>
+            <h6 class="m-0 font-weight-bold text-primary">Kargo Şirketi Ekle</h6>
+        </div>
+        <div col-4>
+            <a href="@Url.Action("Index")" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left"></i> Listeye Dön
+            </a>
+        </div>
+    </div>
+    <div class="card-body">
+        <form asp-action="AddShipper" method="post">
+            <div class="form-group">
+                <label for="ShipperName">Kargo Şirketi Adı</label>
+                <input type="text" class="form-control" id="ShipperName" name="ShipperName" value="@Model.ShipperName" required />
+            </div>
+
+            <div class="form-group">
+                <label for="ContactName">Yetkili Adı</label>
+                <input type="text" class="form-control" id="ContactName" name="ContactName" value="@Model.ContactName" />
+            </div>
+
+            <div class="form-group">
+                <label for="PhoneNumber">Telefon Numarası</label>
+                <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" required />
+            </div>
+
+            <div class="form-group">
+                <label for="Email">E-posta</label>
+                <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" />
+            </div>
+
+            <div class="form-group">
+                <label for="ApiUrl">API URL</label>
+                <input type="text" class="form-control" id="ApiUrl" name="ApiUrl" value="@Model.ApiUrl" />
+            </div>
+
+            <div class="form-group">
+                <label for="ApiKey">API Anahtarı</label>
+                <input type="text" class="form-control" id="ApiKey" name="ApiKey" value="@Model.ApiKey" />
+            </div>
+
+            <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-primary">Kargo Şirketi Ekle</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿ @model Evimden.CoreLayer.DTOs.ProductDTOs.ProductDto
+
+@{
+    ViewData["Title"] = "Ürün Sil";
+}
+
+<h1>@Model.ProductName</h1>
+
+<p><strong>Bu ürünü silmek istediğinizden emin misiniz?</strong></p>
+
+<form asp-action="DeleteProduct" method="post">
+    <button type="submit" class="btn btn-danger">Evet, Sil</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Hayır, Geri Dön</a>
+</form>

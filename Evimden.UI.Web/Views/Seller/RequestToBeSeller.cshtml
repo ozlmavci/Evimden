@@ -1,0 +1,42 @@
+﻿@model Evimden.CoreLayer.DTOs.ProfileDTOs.SellerDto
+
+@{
+    ViewData["Title"] = "Satıcı Olma Başvurusu";
+}
+
+<h1>Satıcı Olma Başvurusu</h1>
+
+<form asp-action="RequestToBeSeller" method="post">
+    <div class="form-group">
+        <label for="ShopName">Mağaza Adı</label>
+        <input type="text" class="form-control" id="ShopName" name="ShopName" value="@Model.ShopName" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Tckn">TCKN</label>
+        <input type="text" class="form-control" id="Tckn" name="Tckn" value="@Model.Tckn" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Vkn">VKN</label>
+        <input type="text" class="form-control" id="Vkn" name="Vkn" value="@Model.Vkn" required />
+    </div>
+
+    <div class="form-group">
+        <label for="About">Hakkında</label>
+        <textarea class="form-control" id="About" name="About">@Model.About</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="CountryId">Ülke</label>
+        <select class="form-control" id="CountryId" name="CountryId">
+            <option value="1">Türkiye</option>
+            <option value="2">Almanya</option>
+            <!-- Diğer ülkeleri dinamik olarak buraya ekleyebilirsiniz -->
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Başvuruyu Gönder</button>
+</form>
+
+<a href="@Url.Action("Index")">Anasayfaya Dön</a>

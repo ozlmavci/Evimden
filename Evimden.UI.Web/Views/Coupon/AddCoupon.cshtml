@@ -1,0 +1,40 @@
+﻿@model Evimden.CoreLayer.DTOs.OrderDTOs.CouponDto
+
+@{
+    ViewData["Title"] = "Yeni Kupon Ekle";
+    Layout = "_Layout";
+}
+
+<h1>Yeni Kupon Ekle</h1>
+
+<form asp-action="AddCoupon" method="post">
+    <div class="form-group">
+        <label for="UserId">Kullanıcı ID</label>
+        <input type="text" id="UserId" name="UserId" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Amount">Tutar</label>
+        <input type="number" id="Amount" name="Amount" class="form-control" step="0.01" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Rate">İndirim Oranı</label>
+        <input type="number" id="Rate" name="Rate" class="form-control" step="0.01" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ExpirationDate">Son Kullanma Tarihi</label>
+        <input type="date" id="ExpirationDate" name="ExpirationDate" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="IsUsed">Kullanıldı mı?</label>
+        <select id="IsUsed" name="IsUsed" class="form-control">
+            <option value="false">Hayır</option>
+            <option value="true">Evet</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kuponu Ekle</button>
+</form>
